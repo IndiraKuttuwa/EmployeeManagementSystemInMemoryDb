@@ -1,0 +1,15 @@
+#head1 {
+    font-family: Arial;
+    
+  }
+  a{
+    color:#651799;
+    text-decoration: underline;
+    font-size: 25px;
+  
+  }
+  a.active{
+    color:blue;
+    font-weight:bold;
+  
+  }

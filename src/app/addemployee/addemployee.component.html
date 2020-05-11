@@ -1,0 +1,62 @@
+<head>
+<title>Add Employee</title>
+</head>
+<h1>Add Employee</h1>
+
+
+<form name="form1" [formGroup]="pform">
+  <label for="ename" name="empname">Employee Name:</label>
+  <input type="text"  name="ename" id="name" pattern="[A-Za-z]{3,30}" [(ngModel)]="name" formControlName="fname" minlength="3" maxlength="30" required/><br>
+  <br>
+  <label for="location">Location:</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+  <select [(ngModel)]="location" id="location"  name="location" formControlName="flocation">
+    <option value="Bangalore">Bangalore</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Pune">Pune</option>
+    <option value="Hyderabad">Hyderabad</option>
+  </select>
+  <br>
+  <br>
+  <label for="email" name="mail" >Email:</label>
+   &nbsp;
+    &nbsp;
+     &nbsp;
+      &nbsp;
+
+   &nbsp;
+    &nbsp;
+   &nbsp;
+
+   &nbsp;
+  <input type="text" name="email" id="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" formControlName="femail" maxlength="30" [(ngModel)]="email" placeholder="Enter a valid email address" required/><br>
+  <br>
+  
+  <label for="mobile" name="phone" >Mobile:</label>
+   &nbsp;
+    &nbsp;
+     &nbsp;
+      &nbsp;
+       &nbsp;
+        &nbsp;
+       &nbsp;
+
+  <input type="text" name="mobile"  id="mobile"   pattern="[0-9]{10}" formControlName="fmobile" [(ngModel)]="mobile" required/><br>
+  <br>
+  <br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <input type="button" class="button" name="Submit" id="add" value="Submit" (click)="addEmployee()" [disabled]="!pform.valid" >
+ 
+
+</form>
+<div id="validstatus" *ngIf =!pform.valid>
+
+Please enter all the values and match the required format!
+ 
+
+</div>
+
+
+

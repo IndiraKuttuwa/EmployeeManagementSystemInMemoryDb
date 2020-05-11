@@ -1,0 +1,49 @@
+<h1>Edit Employee</h1>
+<div *ngIf = displayData>
+<div >
+<form name="editemployee" [formGroup]="eform">
+
+<label for="name">Employee Name:</label>
+&nbsp;
+<input [(ngModel)]="emp.name" type="text" id="name" value="" minlength="3" pattern="[A-Za-z]{3,30}" formControlName="ename"/>
+<br>
+<br>
+
+<label for="location">Location:</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+   <select [(ngModel)]="emp.location" id="location"  name="location" formControlName="elocation" required>
+    <option value="Bangalore">Bangalore</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Pune">Pune</option>
+    <option value="Hyderabad">Hyderabad</option>
+  </select>
+  <br>
+  <br>
+
+  <label for="email">Email: </label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input [(ngModel)]="emp.email" type="text" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" formControlName="eemail" required/>
+<br>
+<br>
+
+
+<label for="mobile">Mobile: </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input [(ngModel)]="emp.mobile" type="text" id="mobile" pattern="[0-9]{10}" formControlName="emobile" required/>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<input type="button" class="updatebutton" id="update"value="Update" (click)="update()" [disabled]="!eform.valid">
+
+</form>
+
+<div id="validstatus" *ngIf =!eform.valid>
+
+Please enter all the values and match the required format!
+ 
+
+</div>
+</div>
+</div>

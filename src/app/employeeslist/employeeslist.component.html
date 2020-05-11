@@ -1,0 +1,41 @@
+<head>
+  <title>Employee List</title>
+  </head>
+
+<div id="div1">
+  <label for="filter" name="fil">Filter by:</label>
+  <br>
+  <input type="text" id="filter" [(ngModel)]="search"/>
+<br>
+<br>
+<br>
+<ng-container *ngIf = "employees | filter: search as result">
+
+<label for="tot" name="noofemp" >Total Number of Employees:</label>
+<label for="cnt" id="count">
+  {{result?.length}}
+  </label>
+  </ng-container>
+  
+<br>
+<br>
+<table id="tab1" border=2px>
+  <thead><td><b>Emp ID</b></td><td><b>Name</b></td><td><b>Location</b></td><td><b>Email</b></td><td><b>Mobile</b></td><td><b>Edit</b></td><td><b>Delete</b></td>
+  </thead>
+  
+  <tr *ngFor="let emp of employees | filter: search">
+    <td><a routerLink="../details" routerLinkActive="active" routerLinkOptions="{exact:true}" (click) = "show(emp.id)" >{{emp.id}}</a></td>
+    <td>{{emp.name | uppercase}}</td>
+    <td>{{emp.location}}</td>
+    <td>{{emp.email}}</td>
+    <td>{{emp.mobile}}</td>
+    <td>
+    <button>  <a routerLink="../editEmployee" routerLinkActive="active" routerLinkOptions="{exact:true}" (click) ="edit(emp.id)"> edit{{emp.id}}</a></button>
+    </td>
+    <td>
+      <button>  <a routerLink="./" (click)="delete(emp.id)">delete{{emp.id}}</a></button>
+    </td>
+    
+    <router-outlet></router-outlet>
+
+

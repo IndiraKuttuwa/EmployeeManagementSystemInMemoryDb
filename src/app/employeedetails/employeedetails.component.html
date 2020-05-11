@@ -1,0 +1,40 @@
+<h1>Employee Details </h1>
+
+
+<div *ngIf = displayData>
+<label id="id">ID:</label>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{{details.id}}
+<br>
+<br>
+
+<label id="name">Name:</label>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{{details.name}}
+<br>
+<br>
+<label id="location">Location:</label>
+&nbsp;
+&nbsp;&nbsp;
+{{details.location}}
+<br>
+<br>
+<label id="email">Email:</label>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{{details.email}}
+<br>
+<br>
+<label id="mobile">Mobile:</label>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+{{details.mobile}}
+<br>
+<br>
+<br>
+<br>
+</div>
+<input type ="button" value="Back" id="back" (click)="btnClick();" />
+
